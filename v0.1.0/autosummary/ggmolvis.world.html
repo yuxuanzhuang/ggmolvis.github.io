@@ -91,7 +91,10 @@
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.renderer.html">ggmolvis.renderer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.sceneobjects.html">ggmolvis.sceneobjects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.utils.html">ggmolvis.utils</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">ggmolvis.world</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ggmolvis.world</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -127,22 +130,94 @@
              
   <section id="module-ggmolvis.world">
 <span id="ggmolvis-world"></span><h1>ggmolvis.world<a class="headerlink" href="#module-ggmolvis.world" title="Link to this heading"></a></h1>
+<p>World is the class that represents the world transformations of an object.
+It contains the location, rotation, and scale of the object.</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.world.WorldTransformation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.world.</span></span><span class="sig-name descname"><span class="pre">WorldTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/world.html#WorldTransformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.world.WorldTransformation" title="Link to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="ggmolvis.world.WorldTransformation.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ggmolvis.world.WorldTransformation.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.world.Location">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.world.</span></span><span class="sig-name descname"><span class="pre">Location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/world.html#Location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.world.Location" title="Link to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="ggmolvis.world.Location.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ggmolvis.world.Location.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.world.Rotation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.world.</span></span><span class="sig-name descname"><span class="pre">Rotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/world.html#Rotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.world.Rotation" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="ggmolvis.world.Rotation.from_quaternion">
+<span class="sig-name descname"><span class="pre">from_quaternion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quaternion</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/world.html#Rotation.from_quaternion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.world.Rotation.from_quaternion" title="Link to this definition"></a></dt>
+<dd><p>Set the rotation from a quaternion</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ggmolvis.world.Rotation.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ggmolvis.world.Rotation.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ggmolvis.world.Rotation.quaternion">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">quaternion</span></span><a class="headerlink" href="#ggmolvis.world.Rotation.quaternion" title="Link to this definition"></a></dt>
+<dd><p>Return the quaternion representation of the rotation</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.world.Scale">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.world.</span></span><span class="sig-name descname"><span class="pre">Scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/world.html#Scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.world.Scale" title="Link to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="ggmolvis.world.Scale.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ggmolvis.world.Scale.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.world.World">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.world.</span></span><span class="sig-name descname"><span class="pre">World</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/world.html#World"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.world.World" title="Link to this definition"></a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="ggmolvis.world.World.matrix_world">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">matrix_world</span></span><a class="headerlink" href="#ggmolvis.world.World.matrix_world" title="Link to this definition"></a></dt>
+<dd><p>Return the 4D world matrix</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Location</span></code>(*, location)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ggmolvis.world.Location" title="ggmolvis.world.Location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Location</span></code></a>(*, location)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rotation</span></code>(*, rotation)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ggmolvis.world.Rotation" title="ggmolvis.world.Rotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rotation</span></code></a>(*, rotation)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scale</span></code>(*, scale)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ggmolvis.world.Scale" title="ggmolvis.world.Scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scale</span></code></a>(*, scale)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">World</span></code>([location, rotation, scale])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ggmolvis.world.World" title="ggmolvis.world.World"><code class="xref py py-obj docutils literal notranslate"><span class="pre">World</span></code></a>([location, rotation, scale])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">WorldTransformation</span></code>(*, coordinates)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ggmolvis.world.WorldTransformation" title="ggmolvis.world.WorldTransformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WorldTransformation</span></code></a>(*, coordinates)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>

@@ -86,7 +86,10 @@
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.base.html">ggmolvis.base</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.camera.html">ggmolvis.camera</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.data.html">ggmolvis.data</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">ggmolvis.ggmolvis</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ggmolvis.ggmolvis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ggmolvis">GGMolVis</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.light.html">ggmolvis.light</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.properties.html">ggmolvis.properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.renderer.html">ggmolvis.renderer</a></li>
@@ -128,10 +131,135 @@
              
   <section id="module-ggmolvis.ggmolvis">
 <span id="ggmolvis-ggmolvis"></span><h1>ggmolvis.ggmolvis<a class="headerlink" href="#module-ggmolvis.ggmolvis" title="Link to this heading"></a></h1>
+<section id="ggmolvis">
+<h2>GGMolVis<a class="headerlink" href="#ggmolvis" title="Link to this heading"></a></h2>
+<p>GGmolVis is a high-level API for creating molecular visualizations in Blender.
+It is built on top of the <cite>MolecularNodes</cite> Blender add-on.
+It provides a simple and intuitive interface for creating complex molecular visualizations
+with just a few lines of code.</p>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.ggmolvis.GGMolVis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.ggmolvis.</span></span><span class="sig-name descname"><span class="pre">GGMolVis</span></span><a class="reference internal" href="../_modules/ggmolvis/ggmolvis.html#GGMolVis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.ggmolvis.GGMolVis" title="Link to this definition"></a></dt>
+<dd><p>Top level class that contains all the elements of the visualization.
+It is similar to a <cite>Figure</cite> in matplotlib. It contains all the
+<cite>Molecule</cite>, <cite>Shape</cite>, <cite>Text</cite>, <cite>Camera</cite>, <cite>Light</cite>, and <cite>World</cite> objects.
+It also contains the global settings for the visualization like
+<cite>subframes</cite>. It is a singleton class, so only one instance will be
+created in a session.</p>
+<p>During initialization, it creates a global camera and a global world for
+object transformation. The global camera is set to a default position
+and rotation. The global world transformation is set to no positional,
+rotational, or scaling transformation.</p>
+<p>The artists are stored in a dictionary with keys as the type of the
+artist and values as the list of artists of that type.</p>
+<section id="properties">
+<h4>Properties:<a class="headerlink" href="#properties" title="Link to this heading"></a></h4>
+<dl class="simple">
+<dt>molecules: list</dt><dd><p>List of all <cite>Molecule</cite> objects in the visualization</p>
+</dd>
+<dt>shapes: list</dt><dd><p>List of all <cite>Shape</cite> objects in the visualization</p>
+</dd>
+<dt>texts: list</dt><dd><p>List of all <cite>Text</cite> objects in the visualization</p>
+</dd>
+<dt>cameras: list</dt><dd><p>List of all <cite>Camera</cite> objects in the visualization</p>
+</dd>
+<dt>lights: list</dt><dd><p>List of all <cite>Light</cite> objects in the visualization</p>
+</dd>
+<dt>worlds: list</dt><dd><p>List of all <cite>World</cite> transformation objects in the visualization</p>
+</dd>
+<dt>global_world: World</dt><dd><p>The global world transformation object</p>
+</dd>
+<dt>global_camera: Camera</dt><dd><p>The global camera object</p>
+</dd>
+<dt>subframes: int</dt><dd><p>Number of subframes to render. It will be a global setting
+for all objects. Default is 1</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ggmolvis.ggmolvis.GGMolVis.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/core/groups.html#MDAnalysis.core.groups.AtomGroup" title="(in MDAnalysis v2.8.0)"><span class="pre">AtomGroup</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/core/groups.html#MDAnalysis.core.groups.Atom" title="(in MDAnalysis v2.8.0)"><span class="pre">Atom</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">atom2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/core/groups.html#MDAnalysis.core.groups.AtomGroup" title="(in MDAnalysis v2.8.0)"><span class="pre">AtomGroup</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/core/groups.html#MDAnalysis.core.groups.Atom" title="(in MDAnalysis v2.8.0)"><span class="pre">Atom</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'distance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mol_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mol_material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'ambient'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mol_style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'sphere'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'black'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_material</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'backdrop'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/ggmolvis.html#GGMolVis.distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.ggmolvis.GGMolVis.distance" title="Link to this definition"></a></dt>
+<dd><p>Create a <cite>Distance</cite> object and add it to the visualization.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ggmolvis.ggmolvis.GGMolVis.line">
+<span class="sig-name descname"><span class="pre">line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'line'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'black'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'backdrop'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/ggmolvis.html#GGMolVis.line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.ggmolvis.GGMolVis.line" title="Link to this definition"></a></dt>
+<dd><p>Create a <cite>Line</cite> object and add it to the visualization.</p>
+<section id="parameters">
+<h5>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h5>
+<dl class="simple">
+<dt>start_points: np.ndarray</dt><dd><p>The start points of the line</p>
+</dd>
+<dt>end_points: np.ndarray</dt><dd><p>The end points of the line</p>
+</dd>
+<dt>name: str</dt><dd><p>The name of the line. Default is ‘line’</p>
+</dd>
+<dt>location: np.ndarray or list</dt><dd><p>The location of the line. Default is None</p>
+</dd>
+<dt>rotation: np.ndarray or list</dt><dd><p>The rotation of the line. Default is None</p>
+</dd>
+<dt>scale: np.ndarray or list</dt><dd><p>The scale of the line. Default is None</p>
+</dd>
+<dt>color: str</dt><dd><p>The color of the line. Default is ‘black’</p>
+</dd>
+<dt>material: str</dt><dd><p>The material of the line. Default is ‘backdrop’</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h5>Returns:<a class="headerlink" href="#returns" title="Link to this heading"></a></h5>
+<dl class="simple">
+<dt>line: Line</dt><dd><p>The created <cite>Line</cite> object</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ggmolvis.ggmolvis.GGMolVis.molecule">
+<span class="sig-name descname"><span class="pre">molecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">universe</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/core/groups.html#MDAnalysis.core.groups.AtomGroup" title="(in MDAnalysis v2.8.0)"><span class="pre">AtomGroup</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/core/universe.html#MDAnalysis.core.universe.Universe" title="(in MDAnalysis v2.8.0)"><span class="pre">Universe</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'spheres'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'atoms'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/ggmolvis.html#GGMolVis.molecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.ggmolvis.GGMolVis.molecule" title="Link to this definition"></a></dt>
+<dd><p>Create a <cite>Molecule</cite> object and add it to the visualization.</p>
+<section id="id1">
+<h5>Parameters:<a class="headerlink" href="#id1" title="Link to this heading"></a></h5>
+<dl class="simple">
+<dt>universe: MDAnalysis.AtomGroup or MDAnalysis.Universe</dt><dd><p>The AtomGroup or Universe object containing the atoms</p>
+</dd>
+<dt>style: str</dt><dd><p>The style of the molecule. Default is ‘spheres’</p>
+</dd>
+<dt>name: str</dt><dd><p>The name of the molecule. Default is ‘atoms’</p>
+</dd>
+<dt>location: np.ndarray or list</dt><dd><p>The location of the molecule. Default is None</p>
+</dd>
+<dt>rotation: np.ndarray or list</dt><dd><p>The rotation of the molecule. Default is None</p>
+</dd>
+<dt>scale: np.ndarray or list</dt><dd><p>The scale of the molecule. Default is None</p>
+</dd>
+<dt>color: str</dt><dd><p>The color of the molecule. Default is ‘default’</p>
+</dd>
+<dt>material: str</dt><dd><p>The material of the molecule. Default is ‘default’</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h5>Returns:<a class="headerlink" href="#id2" title="Link to this heading"></a></h5>
+<dl class="simple">
+<dt>molecule: Molecule</dt><dd><p>The created <cite>Molecule</cite> object</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+</section>
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">GGMolVis</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ggmolvis.ggmolvis.GGMolVis" title="ggmolvis.ggmolvis.GGMolVis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GGMolVis</span></code></a>()</p></td>
 <td><p>Top level class that contains all the elements of the visualization.</p></td>
 </tr>
 </tbody>

@@ -135,13 +135,39 @@
              
   <section id="module-ggmolvis.sceneobjects.base">
 <span id="ggmolvis-sceneobjects-base"></span><h1>ggmolvis.sceneobjects.base<a class="headerlink" href="#module-ggmolvis.sceneobjects.base" title="Link to this heading"></a></h1>
+<p>This module contains the base classes for the scene objects.</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.sceneobjects.base.SceneObject">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.sceneobjects.base.</span></span><span class="sig-name descname"><span class="pre">SceneObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'black'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'backdrop'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/sceneobjects/base.html#SceneObject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.sceneobjects.base.SceneObject" title="Link to this definition"></a></dt>
+<dd><p>Class for the scene object.
+This class is the parent class for all the objects in the scene.
+Access the blender object using the object property, <cite>self.object</cite>.
+The name might be different from the initial name, as Blender might
+append a number to the name if the name already exists.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ggmolvis.sceneobjects.base.SceneObject.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/sceneobjects/base.html#SceneObject.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.sceneobjects.base.SceneObject.draw" title="Link to this definition"></a></dt>
+<dd><p>Draw the object</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.sceneobjects.base.SceneObjectCollection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.sceneobjects.base.</span></span><span class="sig-name descname"><span class="pre">SceneObjectCollection</span></span><a class="reference internal" href="../_modules/ggmolvis/sceneobjects/base.html#SceneObjectCollection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.sceneobjects.base.SceneObjectCollection" title="Link to this definition"></a></dt>
+<dd><p>Class for the collection of scene objects</p>
+</dd></dl>
+
+</section>
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">SceneObject</span></code>([name, location, rotation, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ggmolvis.sceneobjects.base.SceneObject" title="ggmolvis.sceneobjects.base.SceneObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SceneObject</span></code></a>([name, location, rotation, ...])</p></td>
 <td><p>Class for the scene object.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">SceneObjectCollection</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ggmolvis.sceneobjects.base.SceneObjectCollection" title="ggmolvis.sceneobjects.base.SceneObjectCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SceneObjectCollection</span></code></a>()</p></td>
 <td><p>Class for the collection of scene objects</p></td>
 </tr>
 </tbody>

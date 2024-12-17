@@ -89,7 +89,10 @@
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.ggmolvis.html">ggmolvis.ggmolvis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.light.html">ggmolvis.light</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.properties.html">ggmolvis.properties</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">ggmolvis.renderer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ggmolvis.renderer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.sceneobjects.html">ggmolvis.sceneobjects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.utils.html">ggmolvis.utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.world.html">ggmolvis.world</a></li>
@@ -128,13 +131,32 @@
              
   <section id="module-ggmolvis.renderer">
 <span id="ggmolvis-renderer"></span><h1>ggmolvis.renderer<a class="headerlink" href="#module-ggmolvis.renderer" title="Link to this heading"></a></h1>
+<p>This module provides a simple renderer class that can be used to render images and movies in Blender.</p>
+<p>The <cite>Renderer</cite> class provides a simple interface to render images in Blender.
+It allows you to set the resolution of the render and the output file path.
+You can then call the <cite>render</cite> method to render the image and the
+<cite>display_in_notebook</cite> method to display the rendered image in a Jupyter notebook.</p>
+<p>Normally, you can use <cite>.render()</cite> function of the <cite>Sceneobject</cite> to render the scene instead of using this class.</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.renderer.Renderer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.renderer.</span></span><span class="sig-name descname"><span class="pre">Renderer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1280,</span> <span class="pre">720)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/renderer.html#Renderer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.renderer.Renderer" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.renderer.MovieRenderer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.renderer.</span></span><span class="sig-name descname"><span class="pre">MovieRenderer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(640,</span> <span class="pre">360)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/renderer.html#MovieRenderer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.renderer.MovieRenderer" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">MovieRenderer</span></code>([resolution, filepath])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ggmolvis.renderer.MovieRenderer" title="ggmolvis.renderer.MovieRenderer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MovieRenderer</span></code></a>([resolution, filepath])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Renderer</span></code>([resolution, filepath])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ggmolvis.renderer.Renderer" title="ggmolvis.renderer.Renderer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Renderer</span></code></a>([resolution, filepath])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
