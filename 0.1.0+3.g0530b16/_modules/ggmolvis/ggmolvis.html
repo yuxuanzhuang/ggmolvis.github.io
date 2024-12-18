@@ -1,0 +1,499 @@
+
+
+
+
+
+  
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../../../../_static/mdakits-empty-favicon-template.svg">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ggmolvis.ggmolvis &mdash; ggmolvis  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/site.css" />
+
+  
+    <link rel="shortcut icon" href="../../_static/mdakits-empty-favicon-template.svg"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/js/versions.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../../index.html">
+  
+    <img src="../../_static/mdakits-placeholder-logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started with GGMolVis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ggmolvis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">ggmolvis.ggmolvis</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for ggmolvis.ggmolvis</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">========</span>
+<span class="sd">GGMolVis</span>
+<span class="sd">========</span>
+
+<span class="sd">GGmolVis is a high-level API for creating molecular visualizations in Blender.</span>
+<span class="sd">It is built on top of the `MolecularNodes` Blender add-on.</span>
+<span class="sd">It provides a simple and intuitive interface for creating complex molecular visualizations</span>
+<span class="sd">with just a few lines of code.</span>
+
+<span class="sd">Classes</span>
+<span class="sd">-------</span>
+<span class="sd">.. autoclass:: GGMolVis</span>
+<span class="sd">    :members:</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">bpy</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">import</span> <span class="nn">molecularnodes</span> <span class="k">as</span> <span class="nn">mn</span>
+<span class="kn">from</span> <span class="nn">molecularnodes.entities.trajectory</span> <span class="kn">import</span> <span class="n">Trajectory</span>
+<span class="kn">from</span> <span class="nn">molecularnodes.entities.trajectory.selections</span> <span class="kn">import</span> <span class="n">Selection</span>
+<span class="kn">import</span> <span class="nn">MDAnalysis</span> <span class="k">as</span> <span class="nn">mda</span>
+<span class="kn">from</span> <span class="nn">MDAnalysis.core.groups</span> <span class="kn">import</span> <span class="n">Atom</span><span class="p">,</span> <span class="n">AtomGroup</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span><span class="p">,</span> <span class="n">validator</span><span class="p">,</span> <span class="n">ValidationError</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">SESSION</span>
+<span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">GGMolvisArtist</span>
+
+<span class="kn">from</span> <span class="nn">.world</span> <span class="kn">import</span> <span class="n">World</span>
+<span class="kn">from</span> <span class="nn">.camera</span> <span class="kn">import</span> <span class="n">Camera</span>
+<span class="kn">from</span> <span class="nn">.light</span> <span class="kn">import</span> <span class="n">Light</span>
+<span class="kn">from</span> <span class="nn">.properties</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Material</span>
+<span class="kn">from</span> <span class="nn">.sceneobjects</span> <span class="kn">import</span> <span class="n">SceneObject</span><span class="p">,</span> <span class="n">Text</span><span class="p">,</span> <span class="n">Molecule</span><span class="p">,</span> <span class="n">Shape</span><span class="p">,</span> <span class="n">Line</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">validate_properties</span>
+
+<span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span>
+
+
+<div class="viewcode-block" id="GGMolVis">
+<a class="viewcode-back" href="../../autosummary/ggmolvis.ggmolvis.html#ggmolvis.ggmolvis.GGMolVis">[docs]</a>
+<span class="k">class</span> <span class="nc">GGMolVis</span><span class="p">(</span><span class="n">GGMolvisArtist</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Top level class that contains all the elements of the visualization.</span>
+<span class="sd">    It is similar to a `Figure` in matplotlib. It contains all the</span>
+<span class="sd">    `Molecule`, `Shape`, `Text`, `Camera`, `Light`, and `World` objects.</span>
+<span class="sd">    It also contains the global settings for the visualization like</span>
+<span class="sd">    `subframes`. It is a singleton class, so only one instance will be</span>
+<span class="sd">    created in a session.</span>
+
+<span class="sd">    During initialization, it creates a global camera and a global world for</span>
+<span class="sd">    object transformation. The global camera is set to a default position</span>
+<span class="sd">    and rotation. The global world transformation is set to no positional,</span>
+<span class="sd">    rotational, or scaling transformation.</span>
+
+<span class="sd">    The artists are stored in a dictionary with keys as the type of the</span>
+<span class="sd">    artist and values as the list of artists of that type.</span>
+
+<span class="sd">    Properties:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    molecules: list</span>
+<span class="sd">        List of all `Molecule` objects in the visualization</span>
+<span class="sd">    shapes: list</span>
+<span class="sd">        List of all `Shape` objects in the visualization</span>
+<span class="sd">    texts: list</span>
+<span class="sd">        List of all `Text` objects in the visualization</span>
+<span class="sd">    cameras: list</span>
+<span class="sd">        List of all `Camera` objects in the visualization</span>
+<span class="sd">    lights: list</span>
+<span class="sd">        List of all `Light` objects in the visualization</span>
+<span class="sd">    worlds: list</span>
+<span class="sd">        List of all `World` transformation objects in the visualization</span>
+<span class="sd">    global_world: World</span>
+<span class="sd">        The global world transformation object</span>
+<span class="sd">    global_camera: Camera</span>
+<span class="sd">        The global camera object</span>
+<span class="sd">    subframes: int</span>
+<span class="sd">        Number of subframes to render. It will be a global setting</span>
+<span class="sd">        for all objects. Default is 1</span>
+<span class="sd">    </span>
+
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">SESSION</span><span class="p">,</span> <span class="s1">&#39;ggmolvis&#39;</span><span class="p">):</span>
+            <span class="c1"># If SESSION already has an instance, return that instance</span>
+            <span class="k">return</span> <span class="n">SESSION</span><span class="o">.</span><span class="n">ggmolvis</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Creating new GGMolVis&quot;</span><span class="p">)</span>
+        <span class="c1"># Otherwise, create a new instance</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+        <span class="n">SESSION</span><span class="o">.</span><span class="n">ggmolvis</span> <span class="o">=</span> <span class="n">instance</span>  <span class="c1"># Store the instance in SESSION</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">_initialized</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">instance</span>
+    
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initialized</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_initialized</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">ggmolvis</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_artists_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;molecules&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;shapes&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;texts&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;cameras&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">Camera</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;global_camera&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;lights&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;worlds&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">World</span><span class="p">()]</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_global_world</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">worlds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_global_camera</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cameras</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_subframes</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># pre-defined camera position</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">collections</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MolecularNodes&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_global_camera</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_global_camera</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">_set_coordinates</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_global_camera</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">rotation</span><span class="o">.</span><span class="n">_set_coordinates</span><span class="p">((</span><span class="mi">83</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+        <span class="c1"># set up the scene</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_scene</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_frame</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">frame_current</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_update_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_number</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the camera&#39;s state for the given frame&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artists</span><span class="p">:</span>
+            <span class="n">artist</span><span class="o">.</span><span class="n">_update_frame</span><span class="p">(</span><span class="n">frame_number</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_global_camera</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">_apply_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_global_camera</span><span class="o">.</span><span class="n">object</span><span class="p">,</span> <span class="n">frame_number</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_artists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artists_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">molecules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artists_dict</span><span class="p">[</span><span class="s1">&#39;molecules&#39;</span><span class="p">]</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artists_dict</span><span class="p">[</span><span class="s1">&#39;shapes&#39;</span><span class="p">]</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">texts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artists_dict</span><span class="p">[</span><span class="s1">&#39;texts&#39;</span><span class="p">]</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cameras</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artists_dict</span><span class="p">[</span><span class="s1">&#39;cameras&#39;</span><span class="p">]</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">lights</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artists_dict</span><span class="p">[</span><span class="s1">&#39;lights&#39;</span><span class="p">]</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">worlds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artists_dict</span><span class="p">[</span><span class="s1">&#39;worlds&#39;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">global_world</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_global_world</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">global_camera</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_global_camera</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subframes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subframes</span>
+    
+    <span class="nd">@subframes</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">subframes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_subframes</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">for</span> <span class="n">molecule</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="p">:</span>
+            <span class="n">molecule</span><span class="o">.</span><span class="n">trajectory</span><span class="o">.</span><span class="n">subframes</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">_set_scene</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up the scene with transparent background and CYCLES rendering.&quot;&quot;&quot;</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="s1">&#39;CYCLES&#39;</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">film_transparent</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">cycles</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;GPU&quot;</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        
+<div class="viewcode-block" id="GGMolVis.molecule">
+<a class="viewcode-back" href="../../autosummary/ggmolvis.ggmolvis.html#ggmolvis.ggmolvis.GGMolVis.molecule">[docs]</a>
+    <span class="nd">@validate_properties</span>
+    <span class="k">def</span> <span class="nf">molecule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">universe</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AtomGroup</span><span class="p">,</span> <span class="n">mda</span><span class="o">.</span><span class="n">Universe</span><span class="p">],</span>
+                 <span class="n">style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;spheres&#39;</span><span class="p">,</span>
+                 <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;atoms&#39;</span><span class="p">,</span>
+                 <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">rotation</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">scale</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span>
+                 <span class="n">material</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a `Molecule` object and add it to the visualization.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        -----------</span>
+<span class="sd">        universe: MDAnalysis.AtomGroup or MDAnalysis.Universe</span>
+<span class="sd">            The AtomGroup or Universe object containing the atoms</span>
+<span class="sd">        style: str</span>
+<span class="sd">            The style of the molecule. Default is &#39;spheres&#39;</span>
+<span class="sd">        name: str</span>
+<span class="sd">            The name of the molecule. Default is &#39;atoms&#39;</span>
+<span class="sd">        location: np.ndarray or list</span>
+<span class="sd">            The location of the molecule. Default is None</span>
+<span class="sd">        rotation: np.ndarray or list</span>
+<span class="sd">            The rotation of the molecule. Default is None</span>
+<span class="sd">        scale: np.ndarray or list</span>
+<span class="sd">            The scale of the molecule. Default is None</span>
+<span class="sd">        color: str</span>
+<span class="sd">            The color of the molecule. Default is &#39;default&#39;</span>
+<span class="sd">        material: str</span>
+<span class="sd">            The material of the molecule. Default is &#39;default&#39;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        --------</span>
+<span class="sd">        molecule: Molecule</span>
+<span class="sd">            The created `Molecule` object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">molecule</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">atomgroup</span><span class="o">=</span><span class="n">universe</span><span class="o">.</span><span class="n">atoms</span><span class="p">,</span>
+                            <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span>
+                            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                            <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+                            <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span><span class="p">,</span>
+                            <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
+                            <span class="n">material</span><span class="o">=</span><span class="n">material</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">molecule</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">molecule</span></div>
+
+
+<div class="viewcode-block" id="GGMolVis.distance">
+<a class="viewcode-back" href="../../autosummary/ggmolvis.ggmolvis.html#ggmolvis.ggmolvis.GGMolVis.distance">[docs]</a>
+    <span class="nd">@validate_properties</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">atom1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AtomGroup</span><span class="p">,</span> <span class="n">Atom</span><span class="p">],</span>
+                 <span class="n">atom2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AtomGroup</span><span class="p">,</span> <span class="n">Atom</span><span class="p">],</span>
+                 <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span>
+                 <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">rotation</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">scale</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">mol_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span>
+                 <span class="n">mol_material</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;ambient&#39;</span><span class="p">,</span>
+                 <span class="n">mol_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;sphere&#39;</span><span class="p">,</span>
+                 <span class="n">line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                 <span class="n">line_material</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;backdrop&#39;</span><span class="p">,</span>
+                 <span class="n">line_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span>
+                 <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a `Distance` object and add it to the visualization.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">atom1</span><span class="o">.</span><span class="n">universe</span> <span class="o">!=</span> <span class="n">atom2</span><span class="o">.</span><span class="n">universe</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The atoms belong to different universes&quot;</span><span class="p">)</span>
+        <span class="n">mol_atoms</span> <span class="o">=</span> <span class="n">Molecule</span><span class="p">(</span><span class="n">atomgroup</span><span class="o">=</span><span class="n">AtomGroup</span><span class="p">(</span><span class="n">atom1</span> <span class="o">+</span> <span class="n">atom2</span><span class="p">),</span>
+                            <span class="n">style</span><span class="o">=</span><span class="n">mol_style</span><span class="p">,</span>
+                            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_atoms&#39;</span><span class="p">,</span>
+                            <span class="n">color</span><span class="o">=</span><span class="n">mol_color</span><span class="p">,</span>
+                            <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+                            <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span><span class="p">,</span>
+                            <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
+                            <span class="n">material</span><span class="o">=</span><span class="n">mol_material</span><span class="p">)</span>
+        
+        <span class="n">start_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">atom1</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">trajectory</span><span class="o">.</span><span class="n">n_frames</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="n">end_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">atom1</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">trajectory</span><span class="o">.</span><span class="n">n_frames</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ts</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atom1</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">trajectory</span><span class="p">):</span>
+            <span class="n">start_points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom1</span><span class="o">.</span><span class="n">center_of_mass</span><span class="p">()</span>
+            <span class="n">end_points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom2</span><span class="o">.</span><span class="n">center_of_mass</span><span class="p">()</span>
+        
+        <span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start_points</span><span class="o">=</span><span class="n">start_points</span><span class="p">,</span>
+                    <span class="n">end_points</span><span class="o">=</span><span class="n">end_points</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_distance&#39;</span><span class="p">,</span>
+                    <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+                    <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span><span class="p">,</span>
+                    <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">line_color</span><span class="p">,</span>
+                    <span class="n">material</span><span class="o">=</span><span class="n">line_material</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">molecules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mol_atoms</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">line</span></div>
+
+        
+        
+<div class="viewcode-block" id="GGMolVis.line">
+<a class="viewcode-back" href="../../autosummary/ggmolvis.ggmolvis.html#ggmolvis.ggmolvis.GGMolVis.line">[docs]</a>
+    <span class="nd">@validate_properties</span>
+    <span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">start_points</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+             <span class="n">end_points</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+             <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;line&#39;</span><span class="p">,</span>
+             <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">rotation</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">scale</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+             <span class="n">material</span><span class="o">=</span><span class="s1">&#39;backdrop&#39;</span>
+             <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a `Line` object and add it to the visualization.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        -----------</span>
+<span class="sd">        start_points: np.ndarray</span>
+<span class="sd">            The start points of the line</span>
+<span class="sd">        end_points: np.ndarray</span>
+<span class="sd">            The end points of the line</span>
+<span class="sd">        name: str</span>
+<span class="sd">            The name of the line. Default is &#39;line&#39;</span>
+<span class="sd">        location: np.ndarray or list</span>
+<span class="sd">            The location of the line. Default is None</span>
+<span class="sd">        rotation: np.ndarray or list</span>
+<span class="sd">            The rotation of the line. Default is None</span>
+<span class="sd">        scale: np.ndarray or list</span>
+<span class="sd">            The scale of the line. Default is None</span>
+<span class="sd">        color: str</span>
+<span class="sd">            The color of the line. Default is &#39;black&#39;</span>
+<span class="sd">        material: str</span>
+<span class="sd">            The material of the line. Default is &#39;backdrop&#39;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        --------</span>
+<span class="sd">        line: Line</span>
+<span class="sd">            The created `Line` object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start_points</span><span class="o">=</span><span class="n">start_points</span><span class="p">,</span>
+                    <span class="n">end_points</span><span class="o">=</span><span class="n">end_points</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                    <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+                    <span class="n">rotation</span><span class="o">=</span><span class="n">rotation</span><span class="p">,</span>
+                    <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                    <span class="n">material</span><span class="o">=</span><span class="n">material</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">line</span></div>
+
+    
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">check_color</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">materials</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Material </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> not found in the Blender data&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yuxuan Zhuang. Project structure based on the MDAnalysis Cookiecutter version 0.1.</p>
+  </div>
+
+  
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
