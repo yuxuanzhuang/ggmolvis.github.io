@@ -1,0 +1,276 @@
+
+
+
+
+
+  
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="_static/mdakits-empty-favicon-template.svg">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started with GGMolVis &mdash; ggmolvis  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/site.css" />
+
+  
+    <link rel="shortcut icon" href="_static/mdakits-empty-favicon-template.svg"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/js/versions.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GGMolVis Installation Guide with Blender" href="installation_blender.html" />
+    <link rel="prev" title="Customizable and Automated Scientific Molecular Rendering with Molecular Nodes" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="index.html">
+  
+    <img src="_static/mdakits-placeholder-logo.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started with GGMolVis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#new-to-blender">New to Blender?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-ggmolvis-with-blender">Using GGMolVis with Blender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-ggmolvis-as-a-python-module">Using GGMolVis as a Python Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-guides">Installation Guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation_blender.html">GGMolVis Installation Guide with Blender</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation_module.html">GGMolVis Installation Guide as a Python Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-examples">Usage Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/ggmolvis_basic.html">Molecular Visualization with GGMolVis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-help">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ggmolvis</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting Started with GGMolVis</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/getting_started.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started-with-ggmolvis">
+<h1>Getting Started with GGMolVis<a class="headerlink" href="#getting-started-with-ggmolvis" title="Link to this heading"></a></h1>
+<p>GGMolVis is a tool that can be used in two different ways:</p>
+<ol class="arabic simple">
+<li><p><strong>Within Blender</strong>: Integrate GGMolVis directly into Blender’s environment.</p></li>
+<li><p><strong>As a Standalone Python Module</strong>: Use GGMolVis without any graphical user interface, suitable for computational workflows and integration with Python-based data processing pipelines. Note right now this approach is pretty noisy during rendering.</p></li>
+</ol>
+<section id="new-to-blender">
+<h2>New to Blender?<a class="headerlink" href="#new-to-blender" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://www.blender.org/">Blender</a> is an industry-grade 3D modeling and animation software.
+Check out the <a class="reference external" href="https://bradyajohnston.github.io/MolecularNodes/tutorials/">Molecular Nodes tutorials</a> to get started with
+using Molecular Nodes in Blender. You can also find a wealth of tutorials on YouTube and other online resources.</p>
+<p>Alternatively, you can also use GGMolVis as a Python module to create visualizations without the need for Blender’s GUI.</p>
+</section>
+<section id="using-ggmolvis-with-blender">
+<h2>Using GGMolVis with Blender<a class="headerlink" href="#using-ggmolvis-with-blender" title="Link to this heading"></a></h2>
+<p>If you plan to leverage Blender’s 3D visualization capabilities,
+follow the Blender installation guide below.</p>
+<ul class="simple">
+<li><p><strong>Features</strong>:</p>
+<ul>
+<li><p>Full 3D visualization environment</p></li>
+<li><p>Interactive molecule manipulation</p></li>
+<li><p>Integration with other Blender add-ons.</p></li>
+</ul>
+</li>
+<li><p><strong>Requirements</strong>:</p>
+<ul>
+<li><p>Blender 4.3 or later</p></li>
+<li><p>Installation of MolecularNodes and BNotebooks</p></li>
+</ul>
+</li>
+</ul>
+<p>Check out the <a class="reference external" href="installation_blender.html">GGMolVis Installation Guide with Blender</a> for step-by-step instructions.</p>
+</section>
+<section id="using-ggmolvis-as-a-python-module">
+<h2>Using GGMolVis as a Python Module<a class="headerlink" href="#using-ggmolvis-as-a-python-module" title="Link to this heading"></a></h2>
+<p>For workflows that do not require Blender’s GUI, or where you prefer
+headless computation and scripting, install GGMolVis as a Python module.</p>
+<ul class="simple">
+<li><p><strong>Features</strong>:</p>
+<ul>
+<li><p>No GUI required</p></li>
+<li><p>Easily integrate with Python-based tooling, Jupyter notebooks, and more</p></li>
+<li><p>Ideal for batch processing or computational analysis</p></li>
+</ul>
+</li>
+<li><p><strong>Requirements</strong>:</p>
+<ul>
+<li><p>Python 3.11</p></li>
+</ul>
+</li>
+</ul>
+<p>Refer to the <a class="reference external" href="installation_module.html">GGMolVis Installation Guide as a Python Module</a> for details on setting up your environment.</p>
+</section>
+<section id="installation-guides">
+<h2>Installation Guides<a class="headerlink" href="#installation-guides" title="Link to this heading"></a></h2>
+<p>Choose the installation method that best fits your workflow and requirements.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation_blender.html">GGMolVis Installation Guide with Blender</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation_blender.html#installation-steps">Installation Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_blender.html#verification">Verification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation_module.html">GGMolVis Installation Guide as a Python Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation_module.html#installation-steps">Installation Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_module.html#verification">Verification</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="usage-examples">
+<h2>Usage Examples<a class="headerlink" href="#usage-examples" title="Link to this heading"></a></h2>
+<p>Once you have GGMolVis installed, you can start using it to show off your favorite molecules and trajectories!</p>
+<a class="reference internal image-reference" href="_images/example_ggmolvis.png"><img alt="_images/example_ggmolvis.png" class="align-center" src="_images/example_ggmolvis.png" style="width: 800px;" />
+</a>
+<p>See the example notebooks in the <cite>examples</cite> directory of the GGMolVis repository for inspiration.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/ggmolvis_basic.html">Molecular Visualization with GGMolVis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/ggmolvis_basic.html#Trajectory-Visualization">Trajectory Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/ggmolvis_basic.html#Geometric-feature-Visualization">Geometric feature Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/ggmolvis_basic.html#Analysis-Visualization">Analysis Visualization</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="getting-help">
+<h2>Getting Help<a class="headerlink" href="#getting-help" title="Link to this heading"></a></h2>
+<p>If you encounter issues or need help:</p>
+<ul class="simple">
+<li><p>Check the <a class="reference external" href="https://github.com/yuxuanzhuang/ggmolvis/issues">GitHub Issues</a> page for known problems or to report new ones.</p></li>
+<li><p>Ask questions in the <a class="reference external" href="https://discord.com/channels/807348386012987462/1256156074008903741">MDAnalysis community Discord channels</a>!</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Customizable and Automated Scientific Molecular Rendering with Molecular Nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation_blender.html" class="btn btn-neutral float-right" title="GGMolVis Installation Guide with Blender" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yuxuan Zhuang. Project structure based on the MDAnalysis Cookiecutter version 0.1.</p>
+  </div>
+
+  
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
