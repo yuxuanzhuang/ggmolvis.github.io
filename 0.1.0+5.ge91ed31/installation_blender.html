@@ -20,7 +20,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GGMolVis Installation Guide as a Python Module &mdash; ggmolvis  documentation</title>
+  <title>GGMolVis Installation Guide with Blender &mdash; ggmolvis  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
 
@@ -36,8 +36,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Molecular Visualization with GGMolVis" href="examples/ggmolvis_basic.html" />
-    <link rel="prev" title="GGMolVis Installation Guide with Blender" href="installation_blender.html" /> 
+    <link rel="next" title="GGMolVis Installation Guide as a Python Module" href="installation_module.html" />
+    <link rel="prev" title="Getting Started with GGMolVis" href="getting_started.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -84,12 +84,12 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-ggmolvis-with-blender">Using GGMolVis with Blender</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#using-ggmolvis-as-a-python-module">Using GGMolVis as a Python Module</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="getting_started.html#installation-guides">Installation Guides</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="installation_blender.html">GGMolVis Installation Guide with Blender</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">GGMolVis Installation Guide as a Python Module</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GGMolVis Installation Guide with Blender</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#installation-steps">Installation Steps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#verification">Verification</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="installation_module.html">GGMolVis Installation Guide as a Python Module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#usage-examples">Usage Examples</a></li>
@@ -115,9 +115,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="getting_started.html">Getting Started with GGMolVis</a></li>
-      <li class="breadcrumb-item active">GGMolVis Installation Guide as a Python Module</li>
+      <li class="breadcrumb-item active">GGMolVis Installation Guide with Blender</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/installation_module.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/installation_blender.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -125,73 +125,102 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ggmolvis-installation-guide-as-a-python-module">
-<h1>GGMolVis Installation Guide as a Python Module<a class="headerlink" href="#ggmolvis-installation-guide-as-a-python-module" title="Link to this heading"></a></h1>
-<p>This guide provides instructions for installing GGMolVis as a Python module, along with its dependencies.
-Please note that this method of installation does not involve running Blender’s GUI; instead, you will interact with GGMolVis through Python.</p>
+  <section id="ggmolvis-installation-guide-with-blender">
+<h1>GGMolVis Installation Guide with Blender<a class="headerlink" href="#ggmolvis-installation-guide-with-blender" title="Link to this heading"></a></h1>
+<p>This guide provides instructions for installing GGMolVis and its dependencies, enabling you to use GGMolVis directly within Blender.</p>
 <section id="installation-steps">
 <h2>Installation Steps<a class="headerlink" href="#installation-steps" title="Link to this heading"></a></h2>
 <ol class="arabic">
-<li><p><strong>Install GGMolVis with `conda`</strong></p>
-<p>First, clone the GGMolVis repository from GitHub:</p>
+<li><p><strong>Install Blender</strong></p>
+<p>Download and install Blender 4.3 or later from the official
+<a class="reference external" href="https://www.blender.org">Blender website</a>.</p>
+</li>
+<li><p><strong>Install MolecularNodes</strong></p>
+<p>Within Blender, open <strong>Edit &gt; Preferences</strong>:</p>
+<ul class="simple">
+<li><p>Navigate to <strong>Get Extensions</strong>.</p></li>
+<li><p>Search for <strong>Molecular Nodes</strong> and install it directly from the extensions list.</p></li>
+</ul>
+</li>
+</ol>
+<a class="reference internal image-reference" href="_images/get_extensions.png"><img alt="Get Molecular Nodes extension" src="_images/get_extensions.png" style="width: 800px;" />
+</a>
+<ol class="arabic" start="3">
+<li><p><strong>Install BNotebooks to Enable the Blender Jupyter Kernel</strong></p>
+<p>Download BNotebooks from the
+<a class="reference external" href="https://github.com/BradyAJohnston/NotebookConnector/releases/tag/v0.0.5">BNotebooks releases page</a>.</p>
+<ul class="simple">
+<li><p>Click the <strong>BNotebooks_0.0.5.zip</strong> link to download.</p></li>
+</ul>
+<p>In Blender, go to <strong>Edit &gt; Preferences &gt; Add-ons</strong>:</p>
+<ul class="simple">
+<li><p>Click the <strong>v</strong> button and select <strong>Install from Disk…</strong></p></li>
+<li><p>Navigate to the downloaded <strong>BNotebooks_0.0.5.zip</strong> file and click <strong>Install from Disk</strong>.</p></li>
+<li><p>Enable the BNotebooks add-on by checking its box.</p></li>
+<li><p>Click <strong>Install jupyterlab</strong> to install the JupyterLab extension.</p></li>
+<li><p><strong>Restart Blender</strong> to complete the installation.</p></li>
+<li><p>After restarting Blender, return to <strong>Edit &gt; Preferences &gt; Add-ons</strong> and click <strong>Append Kernel</strong> to add the Jupyter kernel to Blender.</p></li>
+</ul>
+</li>
+</ol>
+<a class="reference internal image-reference" href="_images/bnotebook.png"><img alt="Get BNotebooks extension" src="_images/bnotebook.png" style="width: 800px;" />
+</a>
+<a class="reference internal image-reference" href="_images/jup_kernel.png"><img alt="Get Jupyter kernel" src="_images/jup_kernel.png" style="width: 800px;" />
+</a>
+<ol class="arabic" start="4">
+<li><p><strong>Install GGMolVis</strong></p>
+<p>Clone the GGMolVis repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:yuxuanzhuang/ggmolvis.git
 <span class="nb">cd</span><span class="w"> </span>ggmolvis
 </pre></div>
 </div>
-<p>Next, create and activate the conda environment specified in the repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>devtools/conda-envs/test_env.yaml
-conda<span class="w"> </span>activate<span class="w"> </span>ggmolvis-test
-</pre></div>
-</div>
-<p>Then, install GGMolVis in editable mode:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</pre></div>
-</div>
-<p>Verify the installation by checking the version number:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import ggmolvis; print(ggmolvis.__version__)&quot;</span>
-</pre></div>
-</div>
+<p>Install GGMolVis using Blender’s bundled Python. Use the appropriate command for your operating system.</p>
+</li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Currently, only Python 3.11 is supported.</p>
-</div>
-</li>
-<li><p><strong>Install GGMolVis with `uv`</strong></p>
-<p>If you have [<cite>uv</cite>](<a class="reference external" href="https://github.com/astral-sh/uv">https://github.com/astral-sh/uv</a>) installed, you can do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>venv<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.11
-<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ggmolvis @ https://github.com/yuxuanzhuang/ggmolvis.git&#39;</span>
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;mdanalysis @ git+https://github.com/MDAnalysis/mdanalysis.git@develop#subdirectory=package&#39;</span>
-<span class="c1"># optionally: install jupyter-related things</span>
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ipython<span class="w"> </span>ipykernel<span class="w"> </span>jupyter
+<p>You may need to adjust the path to the Python executable depending on where Blender is installed on your system.</p>
+<blockquote>
+<div><p><strong>macOS:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/Applications/Blender.app/Contents/Resources/4.3/python/bin/python3.11<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Currently, rendering in VSCode gives a PIL-related error, but the rendering itself finishes successfully,
-if you simply open the image saved on disk in <cite>/tmp</cite></p>
+<p><strong>Windows:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\Program Files\Blender Foundation\Blender 4.3\4.3\python\bin\python3.11&quot;</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
 </div>
-</li>
+<p><strong>Linux:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/share/blender/4.3/python/bin/python3.11<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<ol class="arabic" start="5">
 <li><p><strong>(Optional) Install a Different Version of MolecularNodes</strong></p>
-<p>If you need a development or alternative version of MolecularNodes, you can install it as follows:</p>
+<p>If you need a development or alternative version of MolecularNodes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:BradyAJohnston/MolecularNodes.git
 <span class="nb">cd</span><span class="w"> </span>MolecularNodes
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+/Applications/Blender.app/Contents/Resources/4.3/python/bin/python3.11<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
+<p>Adjust the path as needed for your operating system.</p>
 </li>
 </ol>
 </section>
 <section id="verification">
 <h2>Verification<a class="headerlink" href="#verification" title="Link to this heading"></a></h2>
 <ol class="arabic">
-<li><p>Start JupyterLab using the ggmolvis-test environment:</p>
+<li><p>Start a JupyterLab session:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 </li>
-<li><p>When JupyterLab opens, select the <cite>ggmolvis-test</cite> kernel in the Launcher or from the <strong>Kernel</strong> menu. No Blender GUI will appear during usage.</p></li>
-<li><p>In a Jupyter notebook cell, run the following commands to confirm that GGMolVis is installed correctly:</p>
+<li><p>In JupyterLab, select the <cite>blender_4.3.0</cite> kernel. <strong>You should see a Blender application window open</strong> and connect to the Jupyter kernel.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://i.imgur.com/w77dUt0.png"><img alt="https://i.imgur.com/w77dUt0.png" src="https://i.imgur.com/w77dUt0.png" style="width: 800px;" />
+</a>
+<ol class="arabic" start="3">
+<li><p>In a Jupyter notebook cell, run the following commands to verify that GGMolVis is installed correctly:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ggmolvis</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ggmolvis</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ggmolvis</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
@@ -199,8 +228,7 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 </div>
 </li>
 </ol>
-<p>If GGMolVis is properly installed, these commands will print the currently installed version and the file path for the GGMolVis module.</p>
-<p>You are now ready to use GGMolVis as a Python module!</p>
+<p>If the commands produce the expected version number and file path, GGMolVis is successfully installed. You are now ready to use GGMolVis within Blender!</p>
 </section>
 </section>
 
@@ -208,8 +236,8 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="installation_blender.html" class="btn btn-neutral float-left" title="GGMolVis Installation Guide with Blender" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="examples/ggmolvis_basic.html" class="btn btn-neutral float-right" title="Molecular Visualization with GGMolVis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting Started with GGMolVis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation_module.html" class="btn btn-neutral float-right" title="GGMolVis Installation Guide as a Python Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
