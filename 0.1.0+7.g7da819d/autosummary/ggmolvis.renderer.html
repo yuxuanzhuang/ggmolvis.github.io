@@ -20,7 +20,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ggmolvis.utils.utils &mdash; ggmolvis  documentation</title>
+  <title>ggmolvis.renderer &mdash; ggmolvis  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/site.css" />
 
@@ -36,8 +36,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ggmolvis.world" href="ggmolvis.world.html" />
-    <link rel="prev" title="ggmolvis.utils.node" href="ggmolvis.utils.node.html" /> 
+    <link rel="next" title="ggmolvis.sceneobjects" href="ggmolvis.sceneobjects.html" />
+    <link rel="prev" title="ggmolvis.properties.styles" href="ggmolvis.properties.styles.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -89,13 +89,12 @@
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.ggmolvis.html">ggmolvis.ggmolvis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.light.html">ggmolvis.light</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.properties.html">ggmolvis.properties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ggmolvis.renderer.html">ggmolvis.renderer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ggmolvis.sceneobjects.html">ggmolvis.sceneobjects</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="ggmolvis.utils.html">ggmolvis.utils</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ggmolvis.utils.node.html">ggmolvis.utils.node</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">ggmolvis.utils.utils</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ggmolvis.renderer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="ggmolvis.sceneobjects.html">ggmolvis.sceneobjects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ggmolvis.utils.html">ggmolvis.utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ggmolvis.world.html">ggmolvis.world</a></li>
 </ul>
 </li>
@@ -120,10 +119,9 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../api.html">API Documentation</a></li>
           <li class="breadcrumb-item"><a href="ggmolvis.html">ggmolvis</a></li>
-          <li class="breadcrumb-item"><a href="ggmolvis.utils.html">ggmolvis.utils</a></li>
-      <li class="breadcrumb-item active">ggmolvis.utils.utils</li>
+      <li class="breadcrumb-item active">ggmolvis.renderer</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/autosummary/ggmolvis.utils.utils.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/autosummary/ggmolvis.renderer.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -131,56 +129,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ggmolvis.utils.utils">
-<span id="ggmolvis-utils-utils"></span><h1>ggmolvis.utils.utils<a class="headerlink" href="#module-ggmolvis.utils.utils" title="Link to this heading"></a></h1>
-<p>Utility functions for working with Blender objects and data.</p>
-<section id="functions">
-<h2>Functions:<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_list_to_array</span></code>(value)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">look_at</span></code>(camera_position, target_position)</p></td>
-<td><p>Calculate the rotation matrix for a camera to point towards a target position.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quaternion_to_euler</span></code>(quaternion)</p></td>
-<td><p>Convert quaternion to Euler angles.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">euler_to_quaternion</span></code>(euler_angles)</p></td>
-<td><p>Convert Euler angles to quaternion.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_properties</span></code>(func)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">suppress_blender_output</span></code>()</p></td>
-<td><p>Context manager to suppress Blender's low-level stdout and stderr output.</p></td>
-</tr>
-</tbody>
-</table>
+  <section id="module-ggmolvis.renderer">
+<span id="ggmolvis-renderer"></span><h1>ggmolvis.renderer<a class="headerlink" href="#module-ggmolvis.renderer" title="Link to this heading"></a></h1>
+<p>This module provides a simple renderer class that can be used to render images and movies in Blender.</p>
+<p>The <cite>Renderer</cite> class provides a simple interface to render images in Blender.
+It allows you to set the resolution of the render and the output file path.
+You can then call the <cite>render</cite> method to render the image and the
+<cite>display_in_notebook</cite> method to display the rendered image in a Jupyter notebook.</p>
+<p>Normally, you can use <cite>.render()</cite> function of the <cite>Sceneobject</cite> to render the scene instead of using this class.</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.renderer.Renderer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.renderer.</span></span><span class="sig-name descname"><span class="pre">Renderer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1280,</span> <span class="pre">720)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/renderer.html#Renderer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.renderer.Renderer" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ggmolvis.renderer.MovieRenderer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ggmolvis.renderer.</span></span><span class="sig-name descname"><span class="pre">MovieRenderer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(640,</span> <span class="pre">360)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ggmolvis/renderer.html#MovieRenderer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ggmolvis.renderer.MovieRenderer" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
-<p class="rubric">Functions</p>
+<p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_list_to_array</span></code>(value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ggmolvis.renderer.MovieRenderer" title="ggmolvis.renderer.MovieRenderer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MovieRenderer</span></code></a>([resolution, filepath])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">euler_to_quaternion</span></code>(euler_angles)</p></td>
-<td><p>Convert Euler angles to quaternion.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lerp</span></code>(a, b, t)</p></td>
-<td><p>Linearly interpolates between two arrays a and b by a factor of t. Parameters: a (np.ndarray): The starting array. b (np.ndarray): The ending array. t (float or np.ndarray): The interpolation factor, where 0 &lt;= t &lt;= 1. If t is an array, it should be broadcastable to the shape of a and b. Returns: np.ndarray: The interpolated array.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">look_at</span></code>(camera_position, target_position)</p></td>
-<td><p>Calculate the rotation matrix for a camera to point towards a target position.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quaternion_to_euler</span></code>(quaternion)</p></td>
-<td><p>Convert quaternion to Euler angles.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">suppress_blender_output</span></code>()</p></td>
-<td><p>Context manager to suppress Blender's low-level stdout and stderr output.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_properties</span></code>(func)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ggmolvis.renderer.Renderer" title="ggmolvis.renderer.Renderer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Renderer</span></code></a>([resolution, filepath])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -191,8 +167,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ggmolvis.utils.node.html" class="btn btn-neutral float-left" title="ggmolvis.utils.node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ggmolvis.world.html" class="btn btn-neutral float-right" title="ggmolvis.world" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ggmolvis.properties.styles.html" class="btn btn-neutral float-left" title="ggmolvis.properties.styles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ggmolvis.sceneobjects.html" class="btn btn-neutral float-right" title="ggmolvis.sceneobjects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
